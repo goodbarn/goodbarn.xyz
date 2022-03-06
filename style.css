@@ -1,0 +1,74 @@
+
+        :root {
+            --top: 50px;
+            --left: 50px;
+            --right: 50px;
+            --bottom: 50px;
+            --border-color: rgb(65, 114, 85);
+        }
+
+        .secondary {
+            color: var(--border-color);
+        }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            color: white;
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        iframe {
+            opacity: 0;
+        }
+
+        main {
+            background: black;
+            min-height: 100vh;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            display: grid;
+            place-content: center;
+        }
+
+        .main img {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav a { color: unset; }
+        nav a:visited { color: unset; }
+
+        .box {
+            margin: 0 auto;
+            box-sizing: border-box;
+            color: white;
+            background: black;
+            border-left: var(--left) outset var(--border-color);
+            border-right: var(--right) outset var(--border-color);
+            border-top: var(--top) outset var(--border-color);
+            border-bottom: var(--bottom) outset var(--border-color);
+            transition: border-color .3s ease; 
+        }
+
+        .main {
+            padding: 1rem;
+        }
+    

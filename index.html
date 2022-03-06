@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Site Behavior tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic site info-->
+    <meta name="title" data-hid="title" content="home | goodbarn.xyz">
+    <meta name="description" data-hid="description" content="">
+
+    <!-- Open Graph (Facebook/Linkedin) tags -->
+    <!-- Testing tool: https://developers.facebook.com/tools/debug/ -->
+    <meta property="og:site_name" content="home | goodbarn.xyz">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://goodbarn.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="home | goodbarn.xyz">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter tags -->
+    <!-- Testing tool: https://cards-dev.twitter.com/validator -->
+    <meta name="twitter:site" content="https://goodbarn.xyz">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="home | goodbarn.xyz">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:image:alt" content="">
+    <title>home | goodbarn.xyz</title>
+    
+    <!-- Inline SVG Emoji Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌲</text></svg>">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="debug"></div>
+    <main class="box">
+        <div class="box">
+            <div class="box">
+                <div class="box">
+                    <div class="box">
+                        <div class="box">
+                            <div class="box main"><img src="/gdbn.png" alt="goodbarn.xyz logo">
+                                <nav>
+                                    <a id="GitHubLink" href="/about.html">about</a>
+                                    <a id="GitHubLink" target="_blank" href="https://github.com/goodbarn">github</a>
+                                    <a id="GitHubLink" target="_blank" href="https://twitter.com/goodbarnxyz">twitter</a>
+                                    <a id="GitHubLink" href="/contact.html">contact</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const coef = 20;
+        const norm = (val) => Math.round(val / coef);
+
+        const x = window.matchMedia("(min-width: 900px)")
+
+        if (x.matches) {
+                // Attach listener function on state changes
+            window.addEventListener('mousemove', (e) => {
+                document.documentElement.style.setProperty('--right', norm(window.innerWidth - e.clientX) + "px");
+                document.documentElement.style.setProperty('--left', norm(e.clientX) + "px");
+                document.documentElement.style.setProperty('--top', norm(e.clientY) + "px");
+                document.documentElement.style.setProperty('--bottom', norm(window.innerHeight - e.clientY) + "px");
+            });
+        } else {
+            document.documentElement.style.setProperty('--right', '10px');
+            document.documentElement.style.setProperty('--left', '10px');
+            document.documentElement.style.setProperty('--top', '10px');
+            document.documentElement.style.setProperty('--bottom', '10px');
+        }
+    </script>
+    <style>
+        :root {
+            --top: 50px;
+            --left: 50px;
+            --right: 50px;
+            --bottom: 50px;
+            --border-color: rgb(65, 114, 85);
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        iframe {
+            opacity: 0;
+        }
+
+        main {
+            background: black;
+            min-height: 100vh;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            display: grid;
+            place-content: center;
+        }
+
+        .main img {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav a { color: unset; }
+        nav a:visited { color: unset; }
+
+        .box {
+            margin: 0 auto;
+            box-sizing: border-box;
+            color: white;
+            background: black;
+            border-left: var(--left) outset var(--border-color);
+            border-right: var(--right) outset var(--border-color);
+            border-top: var(--top) outset var(--border-color);
+            border-bottom: var(--bottom) outset var(--border-color);
+            transition: border-color .3s ease; 
+        }
+
+        .main {
+            padding: 1rem;
+        }
+    </style>
+</body>
+
+</html>
